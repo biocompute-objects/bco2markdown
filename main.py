@@ -299,6 +299,3 @@ def create_markdown(jsonfile):
 
     md_file.create_md_file()
     file.close()
-
-
-create_markdown('deepprog.json')
