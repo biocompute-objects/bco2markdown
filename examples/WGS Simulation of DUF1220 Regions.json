@@ -1,0 +1,486 @@
+{
+  "provenance_domain": {
+    "embargo": {},
+    "name": "WGS Simulation of DUF1220 Regions",
+    "version": "1.0",
+    "license": "https://opensource.org/licenses/MIT",
+    "contributors": [
+      {
+        "name": "Mike Taylor",
+        "orcid": "https://orcid.org/0000-0002-1003-5675",
+        "affiliation": "GWU",
+        "contribution": [
+          "createdBy"
+        ],
+        "email": "mtaylor@example.edu"
+      },
+      {
+        "name": "Josiah S. Carberry",
+        "orcid": "https://orcid.org/0000-0002-1825-0097",
+        "affiliation": "GWU",
+        "contribution": [
+          "curatedBy"
+        ],
+        "email": "jcarberry@example.edu"
+      },
+      {
+        "affiliation": "Creator",
+        "contribution": [
+          "createdBy"
+        ],
+        "email": "keeneyjg@gwu.edu",
+        "name": "Jonathon Keeney",
+        "orcid": ""
+      }
+    ],
+    "review": [],
+    "created": "2020-08-30T11:00:52.937Z",
+    "modified": "2021-09-08T14:13:34.350947"
+  },
+  "description_domain": {
+    "keywords": [
+      "Genome",
+      "Genomics",
+      "Simulation",
+      "Alignment",
+      "Alignment-Strategies",
+      "copy-number-variation",
+      "cnv",
+      "DUF1220",
+      "Genome informatics",
+      "Next-generation sequencing",
+      "Bioinformatics"
+    ],
+    "pipeline_steps": [
+      {
+        "name": "Spike-In Simulate Reads",
+        "version": "1.0.0",
+        "step_number": 0,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/genome.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/simulated.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "1_simulate_readlengths.sh",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/simulation_spikein/1_simulate_readlengths.sh",
+              "filename": "1_simulate_readlengths.sh"
+            }
+          }
+        ],
+        "description": "This script simulates the reads for the 'spike-in' simulation. Single and paired-reads can be randomly sampled from the reference gene (hg38.) To simulate duplication or deletion events, the number of reads were varied to simulate one to ten copies of each DUF1220 domain."
+      },
+      {
+        "name": "Cutadapt",
+        "version": "1.3.1",
+        "step_number": 1,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/genome.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/cut.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "description": "This tool trims reads to remove low quality bases (Phred score < 10)."
+      },
+      {
+        "name": "Spike-In Trim and Filter Reads",
+        "version": "1.0.0",
+        "step_number": 2,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/cut.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/TrimmedFiltered.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "2_trim_spikein.sh",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/simulation_spikein/2_trim_spikein.sh",
+              "filename": "2_trim_spikein.sh"
+            }
+          }
+        ],
+        "description": "This script filters and trims reads down to 100 bp to remove low quality bases from the ends."
+      },
+      {
+        "name": "Spike-In Align Reads to the Genome Reference",
+        "version": "1.0.0",
+        "step_number": 3,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/TrimmedFiltered.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/mapped.csv]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "bowtie2_spikein.sh",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/simulation_spikein/bowtie2_spikein.sh",
+              "filename": "bowtie2_spikein.sh"
+            }
+          }
+        ],
+        "description": "Alignment of reads to genome. This workflow used the 'best' alignment for each read."
+      },
+      {
+        "name": "Calculate Spike-In Coverage for each DUF1220 domain",
+        "version": "1.0.0",
+        "step_number": 4,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/mapped.csv]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/coverage.csv]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "make_bed_spikein.sh",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/simulation_spikein/make_bed_spikein.sh",
+              "filename": "make_bed_spikein.sh"
+            }
+          }
+        ],
+        "description": "This script calculates coverage for each DUF1220 domain."
+      },
+      {
+        "name": "Baseline Simulate Reads",
+        "version": "1.0.0",
+        "step_number": 5,
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/baseline.fasta",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "Human genome build 38",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa",
+              "filename": "GRCh38_full_analysis_set_plus_decoy_hla.fa"
+            }
+          }
+        ],
+        "description": "This script simulates the reads for the baseline simulation. Single and paired-reads were randomly sampled from the reference gene (hg38). To simulate duplication or deletion events, the number of reads were varied to simulate one to ten copies of each DUF1220 domain. To obtain reads for a single domain, reads overlapping a DUF1220 domain of interest were isolated and aligned back to the genome using each of the alignment strategies below.",
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/coverage.csv"
+          }
+        ]
+      },
+      {
+        "name": "Baseline Trim and Filter Reads",
+        "version": "1.0.0",
+        "step_number": 6,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/baseline.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/baselineTrimmed.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "2_trim_replicates.sh",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/simulation_baseline/2_trim_replicates.sh",
+              "filename": "2_trim_replicates.sh"
+            }
+          }
+        ],
+        "description": "This script filters and trims reads down to 100 bp to remove low quality bases from the ends."
+      },
+      {
+        "name": "Baseline Align Reads to the Genome Reference",
+        "version": "1.0.0",
+        "step_number": 7,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/baselineTrimmed.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/baselineAligned.csv]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "bowtie2_replicates.sh",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/simulation_baseline/bowtie2_replicates.sh",
+              "filename": "bowtie2_replicates.sh"
+            }
+          }
+        ],
+        "description": "Alignment of reads to genome. This workflow used the 'best' alignment for each read."
+      },
+      {
+        "name": "Calculate Baseline Coverage for each DUF1220 Domain",
+        "version": "1.0.0",
+        "step_number": 8,
+        "input_list": [
+          {
+            "uri": "http://example.com/data/514769/baselineAligned.fasta]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "http://example.com/data/514769/baselineCoverage.csv]",
+            "access_time": "2019-08-12T19:11:18.369303"
+          }
+        ],
+        "prerequisite": [
+          {
+            "name": "make_bed_replicates.sh",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/simulation_baseline/make_bed_replicates.sh",
+              "filename": "make_bed_replicates.sh"
+            }
+          },
+          {
+            "name": "Ultra Conserved Elements",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "http://ucbase.unimore.it/"
+            }
+          },
+          {
+            "name": "Database of Genomic Variants",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "http://dgv.tcag.ca/"
+            }
+          }
+        ],
+        "description": "This script calculates coverage for each DUF1220 domain."
+      },
+      {
+        "name": "Result Analysis",
+        "version": "1.0.0",
+        "step_number": 9,
+        "prerequisite": [
+          {
+            "name": "spikein_analysis.R",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/analysis/spikein_analysis.R",
+              "filename": "spikein_analysis.R"
+            }
+          },
+          {
+            "name": "replicate_analysis.R",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/analysis/replicate_analysis.R",
+              "filename": "replicate_analysis.R"
+            }
+          },
+          {
+            "name": "load_data.R",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/analysis/load_data.R",
+              "filename": "load_data.R"
+            }
+          },
+          {
+            "name": "normalize.R",
+            "uri": {
+              "access_time": "2019-08-12T19:11:18.369303",
+              "uri": "https://github.com/dpastling/DUF1220_simulation/blob/master/code/analysis/normalize.R",
+              "filename": "normalize.R"
+            }
+          }
+        ],
+        "description": "These scripts compile, parse, and analyze the results files in R. spikein_analysis.R processes the result files for the spikein simulation. replicate_analysis.R processes the result files for the baseline simulation. load_data.R gathers all of the result files into a single data frame. normalize.R normalizes the data depending which type of analysis was run.",
+        "input_list": [
+          {
+            "uri": "https://github.com/kee007ney/hello-world/blob/master/sampleDataIn.txt"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "https://github.com/kee007ney/hello-world/blob/master/sampleDataOut.txt"
+          }
+        ]
+      }
+    ]
+  },
+  "execution_domain": {
+    "external_data_endpoints": [
+      {
+        "name": "access to e-utils",
+        "url": "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+      }
+    ],
+    "software_prerequisites": [
+      {
+        "name": "Bowtie2",
+        "version": "2.2.5",
+        "uri": {
+          "access_time": "2019-08-12T19:11:18.369303",
+          "uri": "http://bowtie-bio.sourceforge.net/bowtie2/index.shtml"
+        }
+      },
+      {
+        "name": "Bedtools",
+        "version": "2.17.0",
+        "uri": {
+          "access_time": "2019-08-12T19:11:18.369303",
+          "uri": "https://bedtools.readthedocs.io/en/latest/"
+        }
+      },
+      {
+        "name": "Samtools",
+        "version": "0.1.19-44428cd",
+        "uri": {
+          "access_time": "2019-08-12T19:11:18.369303",
+          "uri": "http://samtools.sourceforge.net/",
+          "filename": "https://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2/download"
+        }
+      },
+      {
+        "name": "mrsFAST-Ultra",
+        "version": "3.3.11",
+        "uri": {
+          "access_time": "2019-08-12T19:11:18.369303",
+          "uri": "http://sfu-compbio.github.io/mrsfast/",
+          "filename": "https://github.com/sfu-compbio/mrsfast/zipball/master"
+        }
+      },
+      {
+        "name": "Bowtie1",
+        "version": "1.1.2",
+        "uri": {
+          "access_time": "2019-08-12T19:11:18.369303",
+          "uri": "http://bowtie-bio.sourceforge.net/index.shtml",
+          "filename": "https://sourceforge.net/projects/bowtie-bio/files/bowtie/1.1.2/bowtie-1.1.2-src.zip/download"
+        }
+      },
+      {
+        "name": "Perl module: Math::Random",
+        "version": "0.72",
+        "uri": {
+          "access_time": "2019-08-12T19:11:18.369303",
+          "uri": "https://cpan.metacpan.org/authors/id/G/GR/GROMMEL/Math-Random-0.72.tar.gz",
+          "filename": "Math-Random-0.72.tar.gz"
+        }
+      },
+      {
+        "name": "Perl module: Math::Complex",
+        "version": "1.59",
+        "uri": {
+          "access_time": "2019-08-12T19:11:18.369303",
+          "uri": "http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/noarch/RPMS.classic//perl-Math-Complex-1.59-alt1.noarch.rpm",
+          "filename": "perl-Math-Complex-1.59-alt1.noarch.rpm"
+        }
+      }
+    ],
+    "environment_variables": {
+      "HOSTTYPE": "x86_64-linux",
+      "EDITOR": "vim"
+    },
+    "script_driver": "shell",
+    "script": [
+      {
+        "uri": {
+          "uri": "http://isoredirect.centos.org/centos/8/isos/x86_64/",
+          "filename": "Linux CentOS 7"
+        }
+      }
+    ]
+  },
+  "io_domain": {
+    "input_subdomain": [
+      {
+        "uri": {
+          "uri": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/"
+        }
+      }
+    ],
+    "output_subdomain": [
+      {
+        "uri": {
+          "uri": "http://example.com/data/514769/analyzed.csv"
+        },
+        "mediatype": "TEXT/CSS"
+      }
+    ]
+  },
+  "parametric_domain": [
+    {
+      "step": "1",
+      "param": "command line args",
+      "value": "cutadapt -a XXX -A XXX -q 10 -minimum-length 80 -trim-n"
+    },
+    {
+      "step": "7",
+      "param": "command line arg",
+      "value": "--very-sensitive"
+    },
+    {
+      "step": "7",
+      "param": "max insert size",
+      "value": "800"
+    }
+  ],
+  "etag": "089dbf204912cba6454a320a578825f4996e3d08d2e908944bb1f76077d36011",
+  "usability_domain": [
+    "Pipeline for identifying copy number of genetic sequences independent of the genes in which they occur, and with higher fidelity than existing methods. Approximately 25 individuals were randomly chosen from each of the CEU, YRI, CHB, JPT, MXL, CLM, PUR, ASW, LWK, CHS, TSI, IBS, FIN, and BGR populations for a total of 324 individuals. Where domains were more than 1 kb apart, the boundaries of the domains were extended up to 250 bp to allow the possibility of capturing unique sequence directly adjacent to the domain. This example pipeline was created based on the work of Astling et al. doi: 10.1186/s12864-017-3976-z"
+  ],
+  "object_id": "https://biocomputeobject.org/BCO_067092/1.0",
+  "spec_version": "https://w3id.org/ieee/ieee-2791-schema/2791object.json"
+}
