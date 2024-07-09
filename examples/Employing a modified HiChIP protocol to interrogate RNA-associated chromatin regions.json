@@ -1,0 +1,563 @@
+{
+  "provenance_domain": {
+    "name": "Employing a modified HiChIP protocol to interrogate RNA-associated chromatin regions",
+    "version": "1.0",
+    "review": [
+      {
+        "reviewer": {
+          "name": "Evgenia Ulianova",
+          "affiliation": "George Washington University",
+          "contribution": [
+            "createdBy"
+          ],
+          "email": "eulianova@gwmail.gwu.edu",
+          "orcid": "https://orcid.org/0000-0002-4541-2848"
+        },
+        "status": "unreviewed"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Evgenia Ulianova ",
+        "affiliation": "George Washington University",
+        "email": "eulianova@gwmail.gwu.edu",
+        "contribution": [
+          "createdBy"
+        ]
+      },
+      {
+        "name": "Maxwell R. Mumbach",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Jeffrey M. Granja",
+        "affiliation": "Program in Biophysics, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Ryan A. Flynn",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ],
+        "orcid": "http://orcid.org/0000-0001-5013-0442"
+      },
+      {
+        "name": "Caitlin M. Roake",
+        "affiliation": "Department of Medicine, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Ansuman T. Satpathy",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "orcid": "http://orcid.org/0000-0002-5167-537X",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Adam J. Rubin",
+        "affiliation": "Program in Epithelial Biology, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Yanyan Qi",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Zhaozhao Jiang",
+        "affiliation": "Program in Innate Immunity, University of Massachusetts Medical School, Worcester, MA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Shadi Shams",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Bryan H. Louie",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Jimmy K. Guo",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "David G. Gennert",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "M. Ryan Corces",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Paul A. Khavari",
+        "affiliation": "Program in Epithelial Biology, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ],
+        "orcid": "http://orcid.org/0000-0003-0098-4989"
+      },
+      {
+        "name": "Maninjay K. Atianand",
+        "affiliation": "Department of Immunology, University of Pittsburgh School of Medicine, Pittsburgh, PA, USA",
+        "orcid": "https://www.nature.com/articles/s41592-019-0407-x",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Steven E. Artandi",
+        "affiliation": "Department of Medicine, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "Katherine A. Fitzgerald",
+        "affiliation": "Program in Innate Immunity, University of Massachusetts Medical School, Worcester, MA, USA",
+        "contribution": [
+          "authoredBy"
+        ]
+      },
+      {
+        "name": "William J. Greenleaf",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "contribution": [
+          "contributedBy"
+        ],
+        "orcid": "http://orcid.org/0000-0003-1409-3095"
+      },
+      {
+        "name": "Howard Y. Chang",
+        "affiliation": "Center for Personal Dynamic Regulomes, Stanford University School of Medicine, Stanford, CA, USA",
+        "orcid": "http://orcid.org/0000-0002-9459-4393",
+        "contribution": [
+          "contributedBy"
+        ]
+      }
+    ],
+    "license": "Attribution 4.0 International (CC BY 4.0)",
+    "created": "2020-10-24T17:14:10.212Z",
+    "modified": "2020-10-24T17:14:10.212Z"
+  },
+  "description_domain": {
+    "keywords": [
+      "TERC, telomerase, interaction, chromatin, RNA"
+    ],
+    "xref": [
+      {
+        "namespace": "chemId",
+        "name": "ChemIdplus",
+        "ids": [
+          "0081295285"
+        ],
+        "access_time": "2020-10-20T17:13:00.000Z"
+      },
+      {
+        "namespace": "so",
+        "name": "Sequence Ontology",
+        "ids": [
+          "SO:0000624",
+          "SO:0001643",
+          "SO:0001496"
+        ],
+        "access_time": "2020-10-20T17:13:00.000Z"
+      },
+      {
+        "namespace": "pubchem",
+        "name": "PubChem",
+        "ids": [
+          "1259345"
+        ],
+        "access_time": "2020-10-20T17:13:00.000Z"
+      },
+      {
+        "namespace": "taxonomy",
+        "name": "Taxonomy Browser",
+        "ids": [
+          " 9606"
+        ],
+        "access_time": "2020-10-20T17:13:00.000Z"
+      }
+    ],
+    "platform": [
+      "Linux/Ubuntu"
+    ],
+    "pipeline_steps": [
+      {
+        "step_number": 1,
+        "name": "HiC-Pro initial processing of fastq",
+        "description": "These steps are performed in parallel: Align to hg19, remove duplicates, assign fragments to mboI restriction enzyme, filter for valid interactions, generate binned interaction matrices, and filtered reads convert to .hic files using hicpro2juicebox",
+        "version": "2.7.8",
+        "prerequisite": [
+          {
+            "uri": {
+              "filename": "bowtie2-2.3.5-linux-x86_64.zip",
+              "uri": "https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.5/",
+              "access_time": "2020-10-22T01:01:00.000Z"
+            },
+            "name": "Bowtie 2.3.5"
+          },
+          {
+            "uri": {
+              "filename": "r-base-core-dbg_4.0.0-1.1804.0_amd64.deb  ",
+              "uri": "http://cran.mirrors.hoobly.com/",
+              "access_time": "2020-10-22T01:01:00.000Z"
+            },
+            "name": "R"
+          },
+          {
+            "uri": {
+              "filename": "rpython-0.2.1-py2-none-any.whl",
+              "uri": "https://pypi.org/project/rpython/#files",
+              "access_time": "2020-10-22T01:01:00.000Z"
+            },
+            "name": "Python"
+          },
+          {
+            "uri": {
+              "uri": "https://github.com/aidenlab/juicer/wiki/Download",
+              "filename": "juicer_tools_1.22.01.jar",
+              "access_time": "2020-10-22T02:33:00.000Z"
+            },
+            "name": "Juicer tools"
+          },
+          {
+            "uri": {
+              "uri": "https://java.com/en/download/manual.jsp",
+              "filename": "jre-8u271-linux-i586.tar.gz",
+              "access_time": "2020-10-22T02:28:00.000Z"
+            },
+            "name": "Java"
+          }
+        ],
+        "input_list": [
+          {
+            "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX5337603&cmd=search&m=downloads&s=seq",
+            "filename": "sra_data.fastq.gz",
+            "access_time": "2020-10-22T01:13:00.000Z"
+          },
+          {
+            "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX5337602&cmd=search&m=downloads&s=seq",
+            "filename": "sra_data.fastq.gz",
+            "access_time": "2020-10-22T01:14:00.000Z"
+          },
+          {
+            "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4821793&cmd=search&m=downloads&s=seq",
+            "access_time": "2020-10-22T01:15:00.000Z",
+            "filename": "sra_data.fastq.gz"
+          },
+          {
+            "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4821792&cmd=search&m=downloads&s=seq",
+            "filename": "sra_data.fastq.gz",
+            "access_time": "2020-10-22T01:46:00.000Z"
+          },
+          {
+            "filename": "sra_data.fastq.gz",
+            "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4184847&cmd=search&m=downloads&s=seq",
+            "access_time": "2020-10-22T01:47:00.000Z"
+          },
+          {
+            "filename": "sra_data.fastq.gz",
+            "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4184846&cmd=search&m=downloads&s=seq",
+            "access_time": "2020-10-22T01:47:00.000Z"
+          }
+        ],
+        "output_list": [
+          {
+            "filename": "GSM3591885_HeLa_TERCKO_HiChIRP_TERC_B2.hic",
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3591885",
+            "access_time": "2020-10-22T01:51:00.000Z"
+          },
+          {
+            "filename": "GSM3591884_HeLa_TERCKO_HiChIRP_TERC_B1.hic",
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3591884",
+            "access_time": "2020-10-22T01:52:00.000Z"
+          },
+          {
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3424971",
+            "filename": "GSM3424971_GM_HiChIRP_RNase_TERC_B2.hic",
+            "access_time": "2020-10-22T01:52:00.000Z"
+          },
+          {
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3424970",
+            "filename": "GSM3424970_GM_HiChIRP_RNase_TERC_B1.hic",
+            "access_time": "2020-10-22T01:52:00.000Z"
+          },
+          {
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3181426",
+            "filename": "GSM3181426_GM_HiChIRP_TERC_B2.hic",
+            "access_time": "2020-10-22T01:53:00.000Z"
+          },
+          {
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3181425",
+            "filename": "GSM3181425_GM_HiChIRP_TERC_B1.hic",
+            "access_time": "2020-10-22T01:53:00.000Z"
+          }
+        ]
+      },
+      {
+        "step_number": 2,
+        "name": "Juicer",
+        "description": "Identify high-confidence loops with HiCCUPS",
+        "version": "1.22.01",
+        "prerequisite": [
+          {
+            "uri": {
+              "filename": "juicer_tools_1.22.01.jar",
+              "uri": "https://github.com/aidenlab/juicer/wiki/Download",
+              "access_time": "2020-10-22T03:01:00.000Z"
+            },
+            "name": "Juicer Tools"
+          },
+          {
+            "uri": {
+              "filename": "jre-8u271-linux-i586.tar.gz",
+              "uri": "https://java.com/en/download/manual.jsp",
+              "access_time": "2020-10-22T03:02:00.000Z"
+            },
+            "name": "Java"
+          }
+        ],
+        "input_list": [
+          {
+            "filename": "GSM3591885_HeLa_TERCKO_HiChIRP_TERC_B2.hic",
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3591885",
+            "access_time": "2020-10-23T03:03:00.000Z"
+          },
+          {
+            "filename": "GSM3591884_HeLa_TERCKO_HiChIRP_TERC_B1.hic",
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3591884",
+            "access_time": "2020-10-23T03:03:00.000Z"
+          },
+          {
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3424971",
+            "filename": "GSM3424971_GM_HiChIRP_RNase_TERC_B2.hic",
+            "access_time": "2020-10-23T03:03:00.000Z"
+          },
+          {
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3424970",
+            "filename": "GSM3424970_GM_HiChIRP_RNase_TERC_B1.hic",
+            "access_time": "2020-10-23T03:04:00.000Z"
+          },
+          {
+            "filename": "GSM3181426_GM_HiChIRP_TERC_B2.hic\t",
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3181426",
+            "access_time": "2020-10-23T03:04:00.000Z"
+          },
+          {
+            "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3181425",
+            "filename": "GSM3181425_GM_HiChIRP_TERC_B1.hic",
+            "access_time": "2020-10-23T03:04:00.000Z"
+          }
+        ],
+        "output_list": [
+          {
+            "uri": "https://www.nature.com/articles/s41592-019-0407-x#Sec25",
+            "access_time": "2020-10-22T03:14:00.000Z",
+            "filename": "41592_2019_407_MOESM5_ESM.xlsx"
+          }
+        ]
+      }
+    ]
+  },
+  "execution_domain": {
+    "environment_variables": {},
+    "script_driver": "shell",
+    "script": [
+      {
+        "uri": {
+          "filename": "HiC-Pro",
+          "uri": "https://github.com/nservant/HiC-Pro/blob/master/bin/HiC-Pro",
+          "access_time": "2020-10-22T03:21:00.000Z"
+        }
+      },
+      {
+        "uri": {
+          "filename": "hicpro2juicebox.sh",
+          "uri": "https://github.com/nservant/HiC-Pro/blob/master/bin/utils/hicpro2juicebox.sh",
+          "access_time": "2020-10-23T03:50:00.000Z"
+        }
+      }
+    ],
+    "software_prerequisites": [
+      {
+        "uri": {
+          "filename": "bowtie2-2.3.5-linux-x86_64.zip",
+          "uri": "https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.5/",
+          "access_time": "2020-10-22T03:29:00.000Z"
+        },
+        "name": "Bowtie 2.3.5",
+        "version": "2.3.5"
+      },
+      {
+        "uri": {
+          "filename": "r-base-core-dbg_4.0.0-1.1804.0_amd64.deb",
+          "uri": "http://cran.mirrors.hoobly.com/",
+          "access_time": "2020-10-22T03:30:00.000Z"
+        },
+        "name": "R",
+        "version": "4.0.0"
+      },
+      {
+        "uri": {
+          "filename": "rpython-0.2.1-py2-none-any.whl",
+          "uri": "https://pypi.org/project/rpython/#files",
+          "access_time": "2020-10-22T03:32:00.000Z"
+        },
+        "name": "Python",
+        "version": "0.2.1"
+      },
+      {
+        "uri": {
+          "filename": "juicer_tools_1.22.01.jar",
+          "uri": "https://github.com/aidenlab/juicer/wiki/Download",
+          "access_time": "2020-10-22T03:32:00.000Z"
+        },
+        "name": "Juicer tools",
+        "version": "1.22.01"
+      }
+    ],
+    "external_data_endpoints": [
+      {
+        "name": "fastq for HeLa TERCKO HiChIRP TERC biological replicate 2",
+        "url": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX5337603&cmd=search&m=downloads&s=seq"
+      },
+      {
+        "url": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX5337602&cmd=search&m=downloads&s=seq",
+        "name": "fastq for HeLa TERCKO HiChIRP TERC biological replicate 1"
+      },
+      {
+        "url": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4821793&cmd=search&m=downloads&s=seq",
+        "name": "fastq for GM12878 HiChIRP RNase TERC biological replicate 2"
+      },
+      {
+        "url": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4821792&cmd=search&m=downloads&s=seq",
+        "name": "fastq for GM12878 HiChIRP RNase TERC biological replicate 1"
+      },
+      {
+        "url": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4184847&cmd=search&m=downloads&s=seq",
+        "name": "fastq for GM12878 HiChIRP TERC biological replicate 2"
+      },
+      {
+        "url": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4184846&cmd=search&m=downloads&s=seq",
+        "name": "GM12878 HiChIRP TERC biological replicate 1"
+      },
+      {
+        "name": "processed reads for  HeLa TERCKO HiChIRP TERC biological replicate 2",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3591885"
+      },
+      {
+        "name": "processed reads for  HeLa TERCKO HiChIRP TERC biological replicate 1",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3591884"
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3424971",
+        "name": "processed reads for GM12878 HiChIRP RNase TERC biological replicate 2"
+      },
+      {
+        "name": "processed reads for GM12878 HiChIRP RNase TERC biological replicate 1",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3424970"
+      },
+      {
+        "name": "processed reads for GM12878 HiChIRP TERC biological replicate 2",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3181426"
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3181425",
+        "name": "processed reads for  GM12878 HiChIRP TERC biological replicate 1"
+      }
+    ]
+  },
+  "io_domain": {
+    "input_subdomain": [
+      {
+        "uri": {
+          "filename": "sra_data.fastq.gz",
+          "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX5337603&cmd=search&m=downloads&s=seq",
+          "access_time": "2020-10-23T16:56:00.000Z"
+        }
+      },
+      {
+        "uri": {
+          "filename": "sra_data.fastq.gz",
+          "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX5337602&cmd=search&m=downloads&s=seq",
+          "access_time": "2020-10-23T16:56:00.000Z"
+        }
+      },
+      {
+        "uri": {
+          "filename": "sra_data.fastq.gz",
+          "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4821793&cmd=search&m=downloads&s=seq",
+          "access_time": "2020-10-23T16:57:00.000Z"
+        }
+      },
+      {
+        "uri": {
+          "filename": "sra_data.fastq.gz",
+          "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4821792&cmd=search&m=downloads&s=seq",
+          "access_time": "2020-10-23T16:57:00.000Z"
+        }
+      },
+      {
+        "uri": {
+          "filename": "sra_data.fastq.gz",
+          "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4184847&cmd=search&m=downloads&s=seq"
+        }
+      },
+      {
+        "uri": {
+          "filename": "sra_data.fastq.gz",
+          "uri": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX4184846&cmd=search&m=downloads&s=seq",
+          "access_time": "2020-10-23T16:58:00.000Z"
+        }
+      }
+    ],
+    "output_subdomain": [
+      {
+        "uri": {
+          "filename": "41592_2019_407_MOESM5_ESM.xlsx",
+          "uri": "https://www.nature.com/articles/s41592-019-0407-x#Sec25",
+          "access_time": "2020-10-23T17:03:00.000Z"
+        },
+        "mediatype": "xlsx"
+      }
+    ]
+  },
+  "parametric_domain": [],
+  "etag": "7d83a2c7a9b9597df8fdf71e9567311a4a2046f57121bb35874357b5043ed88f",
+  "usability_domain": [
+    "BCO Object for interrogating Telomerase RNA Component (TERC) - chromatin interaction. Three libraries were assembled: HiChIRP TERC sample from human female B lymphoblastoid cell line (GM12878) as well as RNase (GM12878) and HeLa cell line TERC-knockout samples as negative controls. Libraries were generated by performing HiChIRP (https://doi.org/10.1038/s41592-019-0407-x) and Illumina paired-end sequencing on the samples. Pipeline steps are repeated for each sample."
+  ],
+  "object_id": "https://biocomputeobject.org/BCO_022118/1.0",
+  "spec_version": "https://w3id.org/ieee/ieee-2791-schema/2791object.json"
+}
