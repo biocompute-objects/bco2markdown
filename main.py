@@ -1,6 +1,8 @@
 import json
 import mdutils
 import datetime
+import os
+import glob
 
 
 def format_time(time_input):
@@ -301,4 +303,12 @@ def create_markdown(jsonfile):
     file.close()
 
 
-create_markdown('deepprog.json')
+def parse_json_files(path=None):
+    if path:
+        for filename in glob.glob(os.path.join(path, '*.json')):
+            create_markdown(filename)
+    else:
+        for filename in glob.glob('*.json'):
+            create_markdown(filename)
+
+
